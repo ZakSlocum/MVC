@@ -97,18 +97,10 @@ public class ScreenCast extends JFrame {
 				panel.setBackground(color);
 			}
 		});
-		screenOne.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				controller.SetScreen("RED");
-				Color color = ColorFactory.valueOf(controller.updateView());
-				panel.setBackground(color);
-			}
-		});
 		screenTwo.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				controller.SetScreen("RED");
+				controller.SetScreen("ORANGE");
 				Color color = ColorFactory.valueOf(controller.updateView());
 				panel.setBackground(color);
 			}
@@ -116,7 +108,7 @@ public class ScreenCast extends JFrame {
 		screenThree.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				controller.SetScreen("RED");
+				controller.SetScreen("GREEN");
 				Color color = ColorFactory.valueOf(controller.updateView());
 				panel.setBackground(color);
 			}
@@ -124,7 +116,7 @@ public class ScreenCast extends JFrame {
 		screenFour.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				controller.SetScreen("RED");
+				controller.SetScreen("CYAN");
 				Color color = ColorFactory.valueOf(controller.updateView());
 				panel.setBackground(color);
 			}
