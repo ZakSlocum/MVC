@@ -2,11 +2,15 @@ package driver;
 
 import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import org.beryx.awt.color.ColorFactory;
 
 import mvc.ScreenCastController;
 import mvc.ScreenCastModel;
@@ -22,17 +26,17 @@ public class ScreenCast extends JFrame {
 	private JButton screenOne;
 	private JButton screenTwo;
 	private JButton screenFour;
+	private ScreenCastModel model = new ScreenCastModel();
+	private ScreenCastView view = new ScreenCastView();
+	private ScreenCastController controller = new ScreenCastController(model, view);
+	private JPanel panel;
+	private JButton screenThree;
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		
-		ScreenCastModel model = new ScreenCastModel();
-		ScreenCastView view = new ScreenCastView();
-		ScreenCastController controller = new ScreenCastController(model, view);
-		
-		
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -61,7 +65,7 @@ public class ScreenCast extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setBackground(Color.WHITE);
 		panel.setForeground(Color.BLACK);
 		panel.setBounds(0, 0, 1007, 376);
@@ -75,7 +79,7 @@ public class ScreenCast extends JFrame {
 		screenOne.setBounds(25, 394, 126, 38);
 		contentPane.add(screenOne);
 		
-		JButton screenThree = new JButton("Screen 3");
+		screenThree = new JButton("Screen 3");
 		screenThree.setBounds(470, 394, 126, 38);
 		contentPane.add(screenThree);
 		
@@ -85,6 +89,45 @@ public class ScreenCast extends JFrame {
 	}
 	
 	public void handleComponents() {
-		
+		screenOne.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.SetScreen("RED");
+				Color color = ColorFactory.valueOf(controller.updateView());
+				panel.setBackground(color);
+			}
+		});
+		screenOne.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.SetScreen("RED");
+				Color color = ColorFactory.valueOf(controller.updateView());
+				panel.setBackground(color);
+			}
+		});
+		screenTwo.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.SetScreen("RED");
+				Color color = ColorFactory.valueOf(controller.updateView());
+				panel.setBackground(color);
+			}
+		});
+		screenThree.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.SetScreen("RED");
+				Color color = ColorFactory.valueOf(controller.updateView());
+				panel.setBackground(color);
+			}
+		});
+		screenFour.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				controller.SetScreen("RED");
+				Color color = ColorFactory.valueOf(controller.updateView());
+				panel.setBackground(color);
+			}
+		});
 	}
 }

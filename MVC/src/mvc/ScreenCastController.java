@@ -18,8 +18,8 @@ public class ScreenCastController {
 		return model.getColor();
 	}
 	
-	public void updateView() {
-		view.changeScreen(model.getColor());
+	public String updateView() {
+		return view.changeScreen(model.getColor());
 	}
 	
 }
